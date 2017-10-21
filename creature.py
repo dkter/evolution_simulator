@@ -17,7 +17,7 @@ class Creature(Sprite):
         pyglet.resource.path = ["resources"]
         pyglet.resource.reindex()
         creature = pyglet.resource.image("creature.png")
-        
+
         super().__init__(creature, x=init_x, y=init_y)
 
     def sayHi(self):
