@@ -1,5 +1,5 @@
 from pyglet.sprite import Sprite
-import resources
+import pyglet
 
 
 class Creature(Sprite):
@@ -14,7 +14,11 @@ class Creature(Sprite):
 
         self.pos = (init_x, init_y)
 
-        super().__init__(resources.creature, x=init_x, y=init_y)
+        pyglet.resource.path = ["resources"]
+        pyglet.resource.reindex()
+        creature = pyglet.resource.image("creature.png")
+        
+        super().__init__(creature, x=init_x, y=init_y)
 
     def sayHi(self):
         print("hi")
